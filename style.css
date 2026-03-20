@@ -92,3 +92,161 @@ body {
 .menu ul { display: flex; list-style: none; gap: 40px; }
 .menu a { text-decoration: none; color: var(--text-white); font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
 .menu a:hover { color: #00C6FF; }
+
+/* --- HERO BANNER --- */
+.hero { padding: 120px 0; position: relative; }
+/* Tạo quầng sáng mờ sau lưng Hero */
+.hero::before {
+    content: ''; position: absolute; top: -20%; left: -10%; width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(0,114,255,0.2) 0%, rgba(7,11,25,0) 70%);
+    z-index: -1;
+}
+.hero-inner { display: flex; align-items: center; gap: 60px; }
+.hero-text { flex: 1; }
+.hero-text h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 25px; }
+.hero-text h1 span { background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-text p { font-size: 1.1rem; color: var(--text-gray); margin-bottom: 35px; }
+.hero-img { flex: 1; text-align: center; }
+.hero-img img { width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+
+
+/* =========================================================
+   NEW SECTIONS: MISSION & ACTIVITIES GRID
+========================================================= */
+
+/* --- SECTION 1: MISSION (Nền Dark, Icon phát sáng) --- */
+.mission {
+    padding: 100px 0;
+    position: relative;
+    /* Có thể chèn thêm ảnh background bản đồ mờ ở đây nếu muốn */
+}
+.mission-text {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 70px;
+    color: var(--text-white);
+}
+.mission-text span {
+    color: #00C6FF; /* Highlight chữ "miễn phí" */
+}
+.steam-versions {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+.version-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.version-box .v-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.version-box .v-desc {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-bottom: 25px;
+}
+.v-icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: transform 0.3s ease;
+}
+.v-icon:hover {
+    transform: translateY(-10px);
+}
+
+/* Hiệu ứng viền dưới phát sáng giống hệt ảnh của bạn */
+.version-1 .v-icon { border-bottom: 4px solid #FF4B4B; box-shadow: 0 15px 35px rgba(255, 75, 75, 0.25); }
+.version-1 .v-title { color: #FF4B4B; }
+
+.version-2 .v-icon { border-bottom: 4px solid #FFB800; box-shadow: 0 15px 35px rgba(255, 184, 0, 0.25); }
+.version-2 .v-title { color: #FFB800; }
+
+.version-3 .v-icon { border-bottom: 4px solid #00E5FF; box-shadow: 0 15px 35px rgba(0, 229, 255, 0.25); }
+.version-3 .v-title { color: #00E5FF; }
+
+
+/* --- SECTION 2: ACTIVITIES (Nền sáng, Grid ảnh bo góc) --- */
+.activities {
+    padding: 100px 0;
+    background: #F8FAFC; /* Màu nền xám sáng nhẹ giống ảnh */
+    color: #0F172A; 
+}
+.section-title-light {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #1E293B; /* Chữ tối màu cho nền sáng */
+}
+.section-desc {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    color: #64748B;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Lưới 6 cột để chia tỷ lệ dễ dàng */
+    gap: 20px;
+}
+.activity-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+/* 2 thẻ to chiếm mỗi thẻ 3 cột */
+.activity-card.large {
+    grid-column: span 3;
+    height: 380px;
+}
+/* 3 thẻ nhỏ chiếm mỗi thẻ 2 cột */
+.activity-card.small {
+    grid-column: span 2;
+    height: 280px;
+}
+.activity-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.activity-card:hover img {
+    transform: scale(1.08); /* Phóng to ảnh mượt mà khi di chuột */
+}
+/* Lớp màu xanh đè lên dưới đáy ảnh */
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 25px 25px;
+    background: linear-gradient(to top, rgba(0, 102, 255, 0.95) 0%, rgba(0, 102, 255, 0) 100%);
+    color: #fff;
+}
+.card-overlay h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* Căn chỉnh lại cho Mobile */
+@media (max-width: 900px) {
+    .activity-card.large, .activity-card.small {
+        grid-column: span 6; /* Tràn viền 1 cột trên điện thoại */
+        height: 250px;
+    }
+}
