@@ -320,3 +320,13 @@ body {
 
 /* --- FOOTER --- */
 .footer { border-top: 1px solid rgba(255,255,255,0.05); text-align: center; padding: 40px 0; color: var(--text-gray); }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .header-inner { flex-direction: column; height: auto; padding: 15px 0; gap: 15px; }
+    .menu ul { gap: 20px; }
+    .hero-inner, .grid-3, .grid-2, .form-wrapper { flex-direction: column; }
+    .hero-text h1 { font-size: 2.5rem; }
+    .form-img { min-height: 300px; }
+    .form-content { padding: 40px 20px; }
+}
