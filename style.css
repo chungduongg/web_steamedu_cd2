@@ -270,3 +270,16 @@ body {
 }
 .card h3 { font-size: 1.5rem; color: #FFF; margin-bottom: 15px; }
 .card p { color: var(--text-gray); font-size: 0.95rem; }
+
+/* --- TESTIMONIALS --- */
+.testimonials { padding: 100px 0; background: linear-gradient(180deg, var(--bg-dark) 0%, #0a0f24 100%); }
+.grid-2 { display: flex; justify-content: center; gap: 30px; }
+.review-box {
+    flex: 1; max-width: 500px;
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.review-box p { font-style: italic; color: var(--text-gray); font-size: 1.05rem; margin-bottom: 20px; }
+.review-box h4 { color: #00C6FF; font-weight: 600; }
