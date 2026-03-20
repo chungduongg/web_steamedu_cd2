@@ -250,23 +250,3 @@ body {
         height: 250px;
     }
 }
-/* --- COURSES (Các ô vuông bo góc) --- */
-.courses { padding: 100px 0; }
-.grid-3 { display: flex; gap: 30px; }
-.card {
-    flex: 1;
-    background: var(--bg-card);
-    padding: 40px 30px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-}
-.card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(0, 198, 255, 0.3);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-}
-.card h3 { font-size: 1.5rem; color: #FFF; margin-bottom: 15px; }
-.card p { color: var(--text-gray); font-size: 0.95rem; }
