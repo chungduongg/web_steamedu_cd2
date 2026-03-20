@@ -79,3 +79,16 @@ body {
 /* =========================================================
    SECTIONS
 ========================================================= */
+/* --- HEADER --- */
+.header {
+    background: rgba(7, 11, 25, 0.8);
+    backdrop-filter: blur(15px); /* Làm mờ nền phía sau chuẩn trend */
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header-inner { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+.menu ul { display: flex; list-style: none; gap: 40px; }
+.menu a { text-decoration: none; color: var(--text-white); font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
+.menu a:hover { color: #00C6FF; }
